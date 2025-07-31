@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="admin__sidebar" id="crm-sidebar">
+        <a href="{{ route('home') }}"        class="admin__sidebar-link{{ request()->is('home') ? ' admin__sidebar-link--active' : '' }}">Главная</a>
         <a href="{{ route('crm.clients') }}" class="admin__sidebar-link{{ request()->is('crm/clients') ? ' admin__sidebar-link--active' : '' }}">Клиенты</a>
         <a href="{{ route('crm.articles.index') }}" class="admin__sidebar-link{{ request()->is('crm/articles*') ? ' admin__sidebar-link--active' : '' }}">Статьи</a>
         <a href="{{ route('crm.promotion') }}" class="admin__sidebar-link{{ request()->is('crm/promotion') ? ' admin__sidebar-link--active' : '' }}">Акции</a>

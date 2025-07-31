@@ -1,38 +1,36 @@
 <!DOCTYPE html>
-<html lang="Ru-ru">
+<html lang="ru">
 <head>
-	<title>Моментальный загар</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="Servises of tan body">
-	<meta name="keywords" content="endGam,gGaming, magazine, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+    <meta charset="UTF-8">
+    <title>@yield('title', 'Big Lips — Косметология, увеличение губ, уход за лицом и телом')</title>
+    <meta name="description" content="@yield('description', 'Профессиональная косметология в Томске: увеличение губ, уход за кожей, инъекции, коррекция лица. Запишитесь на консультацию!')">
+    <meta name="keywords" content="@yield('keywords', 'косметология, увеличение губ, инъекции, Томск, уход за лицом, биоревитализация, мезотерапия, липолитики')">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
 
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- Open Graph для соцсетей -->
+    <meta property="og:title" content="@yield('og_title', 'Big Lips — Косметология, увеличение губ, уход за лицом и телом')" />
+    <meta property="og:description" content="@yield('og_description', 'Профессиональная косметология в Томске: увеличение губ, уход за кожей, инъекции, коррекция лица. Запишитесь на консультацию!')" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:image" content="{{ asset('img/lips_info.jpg') }}" />
 
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon" />
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/slicknav.min.css">
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<link rel="stylesheet" href="css/animate.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
 
-	<!-- Main Stylesheets -->
-	<link rel="stylesheet" href="css/style.css">
-
-	<style>
-		html {
-  			scroll-behavior: smooth;
-	}
-	</style>
-	<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
+    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/crm.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    
+    <!-- JavaScript -->
+    <script src="/js/nav.js" defer></script>
 </head>
 <body>

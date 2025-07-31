@@ -1,119 +1,145 @@
 @extends('components.main')
 @section('content')
-	<!-- Hero section -->
-	<section class="hero-section overflow-hidden">
-		<div class="hero-slider owl-carousel">
-			<div class="hero-item set-bg d-flex align-items-center justify-content-center text-center" data-setbg="img/main_back.png">
-				<div class="container">
-					<h2>Моментальный загар</h2>
-					<p>У вас намечается важное событие и на посещение сорярия не хватает времени? Я к вашим услугам! Загар 'Моментальный' 15 минут и вы неотразимы.<br>
-					Процедура не только придаст вам голливудский загар, но и обеспечит глубокое увлажнение кожи!</p>
-					<a href="#contact" class="site-btn">Записаться<img src="img/icons/double-arrow.png" alt="#"/></a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Hero section end-->
-	<a name="tan">
-	<section class="intro-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="intro-text-box text-box text-white">
-						<div class="review-pic">
-							<img src="img/face_icon.png" alt="">
-						</div>
-						<div class="review-content text-box text-white">
-							<h3>Лицо</h3>
-							<p>Цена............................................300р</p>
-							<p>Шапочка...........................бесплатно</p>
-							<p></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="intro-text-box text-box text-white">
-						<div class="review-pic">
-							<img src="img/foot_icon.png" alt="">
-						</div>
-						<div class="review-content text-box text-white">
-							<h3>Ноги</h3>
-							<p>Цена............................................500р</p>
-							<p>Одноразовые трусики...бесплатно</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="intro-text-box text-box text-white">
-						<div class="review-pic">
-							<img src="img/body_icon.bmp" alt="">
-						</div>
-						<div class="review-content text-box text-white">
-							<h3>Всё тело</h3>
-							<p>Цена...........................................1000р</p>
-							<p>Шапочка............................бесплатно</p>
-							<p>Одноразовые трусики....бесплатно</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Intro section end -->
 
-	<!-- Featured section -->
-	<a name="faq">
-	<section class="featured-section">
-		<div class="featured-bg set-bg" data-setbg="img/info.jpg"></div>
-			<div class="featured-box">
-				<div class="text-box">
-					<h3>Правила, при соблюдении которых Вы получите красивый и ровный оттенок «Моментального загара»:</h3>
-					<p>1. Перед процедурой необходимо сделать предварительный пилинг/скраб. Это способствует равномерному распределению оттенка на очищенной коже. Очень сухие участки тела рекомендуется обработать легким увлажняющим молочком.</p>
-					<p>2. На процедуру Вы приходите с чистой кожей: без косметики/ парфюмерии/ дезодоранта!</p>
-					<p>3. Все процедуры по избавлению от нежелательных волос на теле проводить не менее, чем за 6 часов до процедуры.  После процедуры – не ранее, чем через 8 часов.</p>
-					<p>4. На процедуру не рекомендуется одевать светлое и обтягивающее белье, так как белье может окраситься, а на коже от плотно прилегающего белья могут остаться следы. Однако, если белье окрасилось, оно легко отстирается.</p>
-					<p>5. После процедуры мыться рекомендуется не ранее, чем через 6-8 часов, а после нанесения экспресс лосьонов не ранее,чем через 2 часа.. Обработанные участки тела не трогать до первого душа!</p>
-					<p>При соблюдении Вами этих правил, оттенок будет держаться в течение 7-14 дней (в зависимости от типа кожи) и равномерно осветляться.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Featured section end-->
+<!-- Hero Section -->
+<section class="hero">
+    <img src="img/lips_info.jpg" alt="Губы" class="hero__img">
+    <div class="hero__content">
+        <h1 class="hero__title">Хотите выразительные и чувственные губы?</h1>
+        <p class="hero__desc">Мечтаете об идеальном контуре и объеме, который подчеркнет именно Вашу красоту?</p>
+        <p class="hero__desc">Не откладывайте свою мечту на завтра — я помогу Вам сделать ее реальностью сегодня.</p>
+        <p class="hero__desc hero__desc--highlight">За годы успешной практики я помогла сотням клиентов обрести уверенность в своей красоте.</p>
+        <a href="javascript:void(0)" class="hero__btn">Записаться <img src="img/icons/double-arrow.png" alt="→"></a>
+    </div>
+</section>
 
-	<!-- Contact page -->
-	<a name="contact">
-	<section class="contact-page">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-7 order-2 order-lg-1">
-					<form class="contact-form" action="{{ route('send') }}" method="post">
-						@csrf
-						<input type="text" name='firstname' placeholder="Фамилия">
-						<input type="text" name='name' placeholder="Имя">
-						<input type="phone" name='phone' placeholder="Телефон +7" value='+7'>
-						<input type="text" name='email' placeholder="Почта">
-						<input type="date" name='date' placeholder="Желаемая дата">
-						<button class="site-btn">Записаться<img src="img/icons/double-arrow.png" alt="#"/></button>
-					</form>
-				</div>
-				<div class="col-lg-5 order-1 order-lg-2 contact-text text-white">
-					<h3>Оставьте заявку</h3>
-					<p>Подробности по телефону или Whatsapp</p>
-					<div class="cont-info">
-						<div class="ci-icon"><img src="img/icons/location.png" alt=""></div>
-						<div class="ci-text">Россия, Томск</div>
-					</div>
-					<div class="cont-info">
-						<div class="ci-icon"><img src="img/icons/phone.png" alt=""></div>
-						<div class="ci-text">+7 923 437 91 14</div>
-					</div>
-					<div class="cont-info">
-						<div class="ci-icon"><img src="img/icons/mail.png" alt=""></div>
-						<div class="ci-text">Krasnovairiska@gmail.com</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Contact page end-->
+<!-- Карточки услуг -->
+<a name="lips_card"></a><br><br><br><br>
+<section class="service">
+    <h2 class="service__header">Выбери свой вариант</h2>
+    <div class="service__cards">
+        @foreach($services as $service)
+            <div class="service__card">
+                <img src="{{ $service->image }}" alt="{{ $service->title }}" class="service__img">
+                <h3 class="service__title">{{ $service->title }}</h3>
+                <p class="service__desc">{{ $service->description }}</p>
+            </div>
+        @endforeach
+    </div>
+</section>
+
+<!-- Секция преимуществ и особенностей -->
+<a name="features"></a><br><br><br><br>
+<section class="features">
+    <h3 class="features__header">Почему выбирают меня</h2>
+    <ul class="features__list">
+        <li class="features__item"><span class="features__icon">&#10003;</span> <span>Исправление асимметрии, исправление чужих работ, выравнивание контура, контурная пластика и увеличение губ</span></li>
+        <li class="features__item"><span class="features__icon">&#10003;</span> <span>Я использую аппликационную анестезию — это безопасно (доплаты нет)</span></li>
+        <li class="features__item"><span class="features__icon">&#10003;</span> <span>Работаю только на сертифицированных препаратах. После процедуры обязательно выдаю паспорт препарата на руки.</span></li>
+        <li class="features__item"><span class="features__icon">&#10003;</span> <span>В состав препарата входит лидокаин, поэтому процедура проходит комфортно</span></li>
+        <li class="features__item"><span class="features__icon">&#10003;</span> <span><b>Все препараты, на которых работаю, СЕРТИФИЦИРОВАНЫ, БЕЗОПАСНЫ и БИОДЕГРАДИРУЕМЫ, выводятся организмом в течение 8-12 месяцев!</b></span></li>
+    </ul>
+</section>
+
+<!-- Блок противопоказаний -->
+<section class="contra">
+    <h2 class="contra__header">Противопоказания</h2>
+    <ul class="contra__list">
+        <li class="contra__item"><span class="contra__icon">&#10060;</span> <span>Индивидуальная непереносимость филлеров пациентом</span></li>
+        <li class="contra__item"><span class="contra__icon">&#10060;</span> <span>Беременность</span></li>
+        <li class="contra__item"><span class="contra__icon">&#10060;</span> <span>Лактация</span></li>
+        <li class="contra__item"><span class="contra__icon">&#10060;</span> <span>Онкологические заболевания в острой стадии</span></li>
+        <li class="contra__item"><span class="contra__icon">&#10060;</span> <span>Нарушение свертываемости крови</span></li>
+        <li class="contra__item"><span class="contra__icon">&#10060;</span> <span>Психосоматические расстройства</span></li>
+    </ul>
+</section>
+
+<!-- Секция дополнительных процедур -->
+<section class="extra">
+    <h2 class="extra__header">Дополнительные процедуры</h2>
+    <div class="extra__list">
+        <div class="extra__group">
+            <h3 class="extra__group-title">Контурная пластика и коррекция филлером</h3>
+            <ul class="extra__group-list">
+                <li class="extra__group-item">Подбородка</li>
+                <li class="extra__group-item">Скулы</li>
+                <li class="extra__group-item">Профиль Джоли</li>
+            </ul>
+        </div>
+        <div class="extra__group">
+            <h3 class="extra__group-title">Омоложение и уход</h3>
+            <ul class="extra__group-list">
+                <li class="extra__group-item">Коктейль "Монако"</li>
+                <li class="extra__group-item">Коллаген</li>
+            </ul>
+        </div>
+        <div class="extra__group">
+            <h3 class="extra__group-title">Коррекция формы лица</h3>
+            <ul class="extra__group-list">
+                <li class="extra__group-item">Худое лицо</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Два варианта инъекций -->
+<section class="inject">
+    <h2 class="inject__header">Два варианта инъекций</h2>
+    <div class="inject__row">
+        <div class="inject__card">
+            <h2 class="inject__title">Gelauron Pen</h2>
+            <img src="img/hyaluron_pen.jpg" alt="Gelauron Pen" class="inject__img">
+            <p class="inject__desc">Безыгольная процедура для увеличения губ и коррекции морщин. Безболезненно, быстро и безопасно.</p>
+        </div>
+        <div class="inject__card">
+            <h2 class="inject__title">Иглами</h2>
+            <img src="img/meza_needle.jpg" alt="Иглами" class="inject__img">
+            <p class="inject__desc">Классическая инъекционная методика для точной коррекции и насыщения кожи полезными веществами.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Контакты -->
+<a name="contact"></a><br><br>
+<section class="contacts">
+    <div class="contacts__row">
+        <div class="contacts__info">
+            <h3 class="contacts__title">Связаться со мной</h3>
+            <p class="contacts__desc">Вы можете написать в WhatsApp, позвонить или воспользоваться формой ниже:</p>
+            <div class="contacts__cont-info">
+                <div class="contacts__ci-icon">
+                    <i class="fa fa-telegram contacts__link--telegram" style="font-size:32px;color:#0088cc;"></i>
+                </div>
+                <div class="contacts__ci-text"><a href="https://t.me/salikhova_irina" target="_blank" class="contacts__link contacts__link--telegram">Telegram</a></div>
+            </div>
+            <div class="contacts__cont-info">
+                <div class="contacts__ci-icon">
+                    <i class="fa fa-whatsapp contacts__link--whatsapp" style="font-size:38px;color:#25d366;"></i>
+                </div>
+                <div class="contacts__ci-text"><a href="https://wa.me/79234379114" target="_blank" class="contacts__link contacts__link--whatsapp">WhatsApp</a></div>
+            </div>
+            <div class="contacts__cont-info">
+                <div class="contacts__ci-icon">
+                    <i class="fa fa-vk contacts__link--vk" style="font-size:32px;color:#4c75a3;"></i>
+                </div>
+                <div class="contacts__ci-text"><a href="https://vk.com/moment_zagarr" target="_blank" class="contacts__link contacts__link--vk">ВКонтакте</a></div>
+            </div>
+            <div class="contacts__cont-info">
+                <div class="contacts__ci-icon">
+                    <i class="fa fa-envelope contacts__link--email" style="font-size:32px;color:#ea4335;"></i>
+                </div>
+                <div class="contacts__ci-text"><a href="mailto:Krasnovairiska@gmail.com" class="contacts__link contacts__link--email">Krasnovairiska@gmail.com</a></div>
+            </div>
+            <div class="contacts__cont-info">
+                <div class="contacts__ci-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" width="35" height="35">
+  					<path d="M17.5 32C17.5 32 27 23.5 27 16.5C27 11.2533 22.7467 7 17.5 7C12.2533 7 8 11.2533 8 16.5C8 23.5 17.5 32 17.5 32Z" stroke="#a3154b" stroke-width="2" fill="none"/>
+  					<circle cx="17.5" cy="16.5" r="3" stroke="#a3154b" stroke-width="2" fill="none"/>
+					</svg></div>
+                <div class="contacts__ci-text">Россия, г.Томск, ул.Пушкина 22</div>
+            </div>
+            <button class="contacts__btn">Записаться на консультацию</button>
+        </div>
+    </div>
+</section>
 @endsection

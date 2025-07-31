@@ -1,0 +1,142 @@
+body.crm {
+    background: #bbb;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333;
+    margin: 0;
+}
+.crm__main {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+.crm__layout {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+}
+.crm__sidebar {
+    min-width: 200px;
+    background: #f4f6f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 24px 0;
+    margin-right: 32px;
+}
+.crm__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.crm__menu-link {
+    display: block;
+    color: #a3154b;
+    font-weight: 600;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    transition: background 0.18s, color 0.18s;
+}
+.crm__menu-link:hover, .crm__menu-link--active {
+    background: #fff0f6;
+    color: #c2185b;
+}
+.crm__content {
+    flex: 1 1 0;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 32px 24px;
+}
+.crm__title {
+    color: #a3154b;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-align: center;
+}
+.crm__subtitle {
+    color: #c2185b;
+    font-size: 1.2em;
+    margin-bottom: 18px;
+    text-align: center;
+}
+.crm-auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+.crm-auth__container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(163,21,75,0.07);
+    padding: 36px 28px 28px 28px;
+    max-width: 400px;
+    margin: 48px auto 0 auto;
+}
+.crm-auth__title {
+    color: #a3154b;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 18px;
+    text-align: center;
+}
+.crm-auth__form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.crm-auth__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.crm-auth__label {
+    color: #a3154b;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.crm-auth__input {
+    border: 1.5px solid #e0b6d6;
+    border-radius: 6px;
+    font-size: 1.08em;
+    color: #a3154b;
+    background: #fff0f6;
+    outline: none;
+    transition: border 0.2s;
+    padding: 8px 12px;
+}
+.crm-auth__input:focus {
+    border: 1.5px solid #a3154b;
+    background: #fff;
+}
+.crm-auth__error {
+    color: #d32f2f;
+    font-size: 0.98em;
+    margin-top: 2px;
+}
+.crm-auth__alert {
+    color: #fff;
+    background: #d32f2f;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.crm-auth__submit {
+    background: #b01ba5;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 0;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s;
+    margin-top: 8px;
+}
+.crm-auth__submit:hover {
+    background: #a3154b;
+} 

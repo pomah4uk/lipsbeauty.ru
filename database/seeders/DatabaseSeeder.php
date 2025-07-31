@@ -12,6 +12,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call(ServiceSeeder::class);
+        \App\Models\User::create([
+            'login' => 'admin',
+            'password' => \Illuminate\Support\Facades\Hash::make(env('ADMIN_PASSWORD')),
+        ]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

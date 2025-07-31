@@ -1,33 +1,34 @@
-<!-- Footer section -->
-<footer class="footer-section">
-		<div class="container">
-			<a href="#" class="footer-logo">
-				<img src="./img/logo.png" alt="">
-			</a>
-			<ul class="main-menu footer-menu">
-			<li><a href="">Главная</a></li>
-                    <li><a href="#faq">Подготовка</a></li>
-                    <li><a href="#tan">Загар</a></li>
-                    <li><a href="#">Увеличение губ</a></li>
-					<li><a href="#contact">Контакты</a></li>
-			</ul>
-			<div class="header-social d-flex justify-content-end">
-				<p>Follow us:</p>
-				<a href="https://vk.com/moment_zagarr" target="_blank"><i class="fa fa-vk"></i></a>
-			</div>
-		</div>
-	</footer>
-	<!-- Footer section end -->
+<footer class="footer">
+    <div class="footer__container">
+        <ul class="footer__menu">
+            <li><a href="/">Главная</a></li>
+            <li><a href="#lips_card">Список услуг</a></li>
+            <li><a href="{{ route('galary') }}">Галерея</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+        <div>
+            <div class="footer__contacts">
+                <div>Россия, Томск</div>
+                <div>+7 923 437 91 14</div>
+                <div>Krasnovairiska@gmail.com</div>
+            </div>
+            <div class="footer__social">
+                <span>Мы в соцсетях:</span>
+                <a href="https://vk.com/moment_zagarr" target="_blank"><i class="fa fa-vk"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer__copyright">
+        &copy; {{ date('Y') }} Big Lips. Все права защищены.
+    </div>
+</footer>
+<!-- Footer section end -->
 
+<!--====== Javascripts ======-->
+<script src="/js/modal.js"></script>
 
-	<!--====== Javascripts & Jquery ======-->
-	<script src={{ asset("js/jquery-3.2.1.min.js") }}></script>
-	<script src={{ asset("js/bootstrap.min.js") }}></script>
-	<script src={{ asset("js/jquery.slicknav.min.js") }}></script>
-	<script src={{ asset("js/owl.carousel.min.js") }}></script>
-	<script src={{ asset("js/jquery.sticky-sidebar.min.js") }}></script>
-	<script src={{ asset("js/jquery.magnific-popup.min.js") }}></script>
-	<script src={{ asset("js/main.js") }}></script>
+@stack('scripts')
 
-	</body>
+</body>
 </html>

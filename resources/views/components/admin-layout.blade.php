@@ -9,10 +9,9 @@
 </head>
 <body>
     <div class="admin__sidebar" id="crm-sidebar">
-        <a href="{{ route('home') }}"        class="admin__sidebar-link{{ request()->is('home') ? ' admin__sidebar-link--active' : '' }}">Главная</a>
+        <a href="{{ route('home') }}" class="admin__sidebar-link{{ request()->is('home') ? ' admin__sidebar-link--active' : '' }}">Главная</a>
         <a href="{{ route('crm.clients') }}" class="admin__sidebar-link{{ request()->is('crm/clients') ? ' admin__sidebar-link--active' : '' }}">Клиенты</a>
-        <a href="{{ route('crm.articles.index') }}" class="admin__sidebar-link{{ request()->is('crm/articles*') ? ' admin__sidebar-link--active' : '' }}">Статьи</a>
-        <a href="{{ route('crm.promotion') }}" class="admin__sidebar-link{{ request()->is('crm/promotion') ? ' admin__sidebar-link--active' : '' }}">Акции</a>
+        <a href="{{ route('crm.posts.index') }}" class="admin__sidebar-link{{ request()->is('crm/posts*') ? ' admin__sidebar-link--active' : '' }}">Посты</a>
         <a href="{{ route('crm.photos.index') }}" class="admin__sidebar-link{{ request()->is('crm/photos*') ? ' admin__sidebar-link--active' : '' }}">Галерея</a>
         <a href="{{ route('crm.services.index') }}" class="admin__sidebar-link{{ request()->is('crm/services*') ? ' admin__sidebar-link--active' : '' }}">Услуги</a>
         <form action="{{ route('crm.logout') }}" method="POST" style="display:block;">
@@ -30,9 +29,9 @@
     </div>
     <div class="crm-mobile-menu" id="crm-mobile-menu">
         <div class="crm-mobile-menu-content">
+            <a href="{{ route('home') }}" class="crm-mobile-link{{ request()->is('home') ? ' crm-mobile-link--active' : '' }}">Главная</a>
             <a href="{{ route('crm.clients') }}" class="crm-mobile-link{{ request()->is('crm/clients') ? ' crm-mobile-link--active' : '' }}">Клиенты</a>
-            <a href="{{ route('crm.articles.index') }}" class="crm-mobile-link{{ request()->is('crm/articles*') ? ' crm-mobile-link--active' : '' }}">Статьи</a>
-            <a href="{{ route('crm.promotion') }}" class="crm-mobile-link{{ request()->is('crm/promotion') ? ' crm-mobile-link--active' : '' }}">Акции</a>
+            <a href="{{ route('crm.posts.index') }}" class="crm-mobile-link{{ request()->is('crm/posts') ? ' crm-mobile-link--active' : '' }}">Посты</a>
             <a href="{{ route('crm.photos.index') }}" class="crm-mobile-link{{ request()->is('crm/photos*') ? ' crm-mobile-link--active' : '' }}">Галерея</a>
             <a href="{{ route('crm.services.index') }}" class="crm-mobile-link{{ request()->is('crm/services*') ? ' crm-mobile-link--active' : '' }}">Услуги</a>
             <form action="{{ route('crm.logout') }}" method="POST" style="display:block;">

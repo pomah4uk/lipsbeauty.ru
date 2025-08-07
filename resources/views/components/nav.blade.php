@@ -22,7 +22,7 @@
                         <a class="nav__mobile-link{{ request()->routeIs('galary') ? ' nav__mobile-link--active' : '' }}" href="{{ route('galary') }}">Галерея</a>
                     </li>
                     <li class="nav__mobile-item">
-                        <a class="nav__mobile-link{{ request()->routeIs('blog*') ? ' nav__mobile-link--active' : '' }}" href="{{ route('blog') }}">Блог</a>
+                        <a class="nav__mobile-link{{ request()->routeIs('posts') ? ' nav__mobile-link--active' : '' }}" href="{{ route('posts') }}">Посты</a>
                     </li>
                     <li class="nav__mobile-item">
                         <a class="nav__mobile-link" href="#lips_card">Список услуг</a>
@@ -41,7 +41,7 @@
         <ul class="nav__menu" id="nav-menu">
             <li><a class="nav__link{{ request()->routeIs('home') ? ' nav__link--active' : '' }}" href="{{ route('home') }}">Главная</a></li>
             <li><a class="nav__link{{ request()->routeIs('galary') ? ' nav__link--active' : '' }}" href="{{ route('galary') }}">Галерея</a></li>
-            <li><a class="nav__link{{ request()->routeIs('blog*') ? ' nav__link--active' : '' }}" href="{{ route('blog') }}">Блог</a></li>
+            <li><a class="nav__link{{ request()->routeIs('posts') ? ' nav__link--active' : '' }}" href="{{ route('posts') }}">Посты</a></li>
             <li><a class="nav__link" href="#lips_card">Список услуг</a></li>
             <li><a class="nav__link" href="#features">FAQ</a></li>
             <li><a class="nav__link" href="#contact">Контакты</a></li>

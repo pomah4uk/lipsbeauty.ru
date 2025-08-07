@@ -14,6 +14,7 @@
         <div class="mb-3">
             <label for="password" class="form-label">Пароль</label>
             <input type="password" class="form-control" id="password" name="password" required>
+            <button type="button" class="btn btn-outline-secondary" id="togglePassword">👁️</button>
             @error('password')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
@@ -24,4 +25,15 @@
         <button type="submit" class="admin__btn">Войти</button>
     </form>
 </div>
-@endsection 
+
+<script>
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordInput = document.getElementById("password");
+
+  togglePassword.addEventListener("click", function () {
+    const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+    passwordInput.setAttribute("type", type);
+    this.textContent = type === "password" ? "👁️" : "🙈";
+  });
+</script>
+@endsection

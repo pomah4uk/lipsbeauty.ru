@@ -15,7 +15,7 @@ class PhotoController extends Controller
     public function index()
     {
         $photos = Photo::orderByDesc('created_at')->paginate(20);
-        return view('crm.photos', compact('photos'));
+        return view('crm.photos.photos', compact('photos'));
     }
 
     /**
@@ -32,7 +32,7 @@ class PhotoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'add_photo' => 'required|image|max:5120',
+            'add_photo' => 'required|image|max:10000',
             'description' => 'nullable|string|max:1000',
         ]);
 

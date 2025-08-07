@@ -1,6 +1,5 @@
 @extends('components.main')
 @section('content')
-
 <!-- Hero Section -->
 <section class="hero">
     <img src="img/lips_info.jpg" alt="Губы" class="hero__img">
@@ -9,9 +8,13 @@
         <p class="hero__desc">Мечтаете об идеальном контуре и объеме, который подчеркнет именно Вашу красоту?</p>
         <p class="hero__desc">Не откладывайте свою мечту на завтра — я помогу Вам сделать ее реальностью сегодня.</p>
         <p class="hero__desc hero__desc--highlight">За годы успешной практики я помогла сотням клиентов обрести уверенность в своей красоте.</p>
-        <a href="javascript:void(0)" class="hero__btn">Записаться <img src="img/icons/double-arrow.png" alt="→"></a>
+        <button class="hero__btn" id="openModalBtn">Записаться <img src="img/icons/double-arrow.png" alt="→"></button>
     </div>
 </section>
+
+@if(session('success'))
+    <div class="global-success">{{ session('success') }}</div>
+@endif
 
 <!-- Карточки услуг -->
 <a name="lips_card"></a><br><br><br><br>
@@ -20,7 +23,7 @@
     <div class="service__cards">
         @foreach($services as $service)
             <div class="service__card">
-                <img src="{{ $service->image }}" alt="{{ $service->title }}" class="service__img">
+            <img src="{{ $service->image_path }}" alt="{{ $service->title }}" class="service__img">
                 <h3 class="service__title">{{ $service->title }}</h3>
                 <p class="service__desc">{{ $service->description }}</p>
             </div>
@@ -31,7 +34,7 @@
 <!-- Секция преимуществ и особенностей -->
 <a name="features"></a><br><br><br><br>
 <section class="features">
-    <h3 class="features__header">Почему выбирают меня</h2>
+    <h3 class="features__header">Почему выбирают меня</h3>
     <ul class="features__list">
         <li class="features__item"><span class="features__icon">&#10003;</span> <span>Исправление асимметрии, исправление чужих работ, выравнивание контура, контурная пластика и увеличение губ</span></li>
         <li class="features__item"><span class="features__icon">&#10003;</span> <span>Я использую аппликационную анестезию — это безопасно (доплаты нет)</span></li>
@@ -138,7 +141,7 @@
 					</svg></div>
                 <div class="contacts__ci-text">Россия, г.Томск, ул.Пушкина 22</div>
             </div>
-            <button class="contacts__btn">Записаться на консультацию</button>
+            <button class="contacts__btn" id="openModalBtnFooter">Записаться на консультацию</button>
         </div>
     </div>
 </section>

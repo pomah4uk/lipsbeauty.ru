@@ -14,7 +14,7 @@ class ClientController extends Controller
     public function index()
     {
         $clients = Client::orderByDesc('created_at')->paginate(20);
-        return view('/crm/clients', compact('clients'));
+        return view('/crm/clients/clients', compact('clients'));
     }
 
     // Приём формы с сайта

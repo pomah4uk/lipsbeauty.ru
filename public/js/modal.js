@@ -2,6 +2,7 @@ function openModal() {
     const modal = document.getElementById('contactModal');
     if (modal) {
         modal.style.display = 'flex';
+        modal.style.pointerEvents = 'auto';
         document.body.style.overflow = 'hidden';
     }
 }

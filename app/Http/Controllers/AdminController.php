@@ -8,10 +8,6 @@ use App\Models\Client;
 class AdminController extends Controller
 {
     public function clients(){
-        return view('crm.clients', ['clients'=>Client::orderByDesc('created_at')->paginate(20)]);
-    }
-    
-    public function promotion(){
-        return view('crm.promotion');
+        return view('crm.clients.clients', ['clients'=>Client::orderByDesc('created_at')->paginate(20)]);
     }
 }

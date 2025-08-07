@@ -62,12 +62,6 @@
             @endforeach
         </tbody>
     </table>
-    {{-- Карточки для мобильных, скрыты на ПК через CSS --}}
-    @include('crm.partials.photo-cards', ['photos' => $photos])
-    <div>
-        {{ $photos->links() }}
-    </div>
-</div>
 @endsection
 
 @push('scripts')

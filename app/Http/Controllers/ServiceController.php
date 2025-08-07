@@ -11,13 +11,13 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::orderByDesc('created_at')->paginate(20);
-        return view('crm.services', compact('services'));
+        return view('crm.services.services', compact('services'));
     }
 
     // Форма создания услуги (CRM)
     public function create()
     {
-        return view('crm.service_create');
+        return view('crm.services.create');
     }
 
     // Сохранение услуги
@@ -26,21 +26,24 @@ class ServiceController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'required|image|max:4096',
+            'image_path' => 'required|image|max:4096',
         ]);
-        $path = $request->file('image')->store('services', 'public');
+
+        $path = $request->file('image_path')->store('services', 'public');
+
         $service = Service::create([
             'title' => $data['title'],
             'description' => $data['description'],
-            'image' => '/storage/' . $path,
+            'image_path' => '/storage/' . $path,
         ]);
+
         return redirect()->route('crm.services.index')->with('success', 'Услуга добавлена!');
     }
 
     // Форма редактирования услуги
     public function edit(Service $service)
     {
-        return view('crm.service_edit', compact('service'));
+        return view('crm.services.edit', compact('service'));
     }
 
     // Обновление услуги
@@ -49,15 +52,18 @@ class ServiceController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|max:4096',
+            'image_path' => 'nullable|image|max:4096',
         ]);
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('services', 'public');
-            $service->image = '/storage/' . $path;
+
+        if ($request->hasFile('image_path')) {
+            $path = $request->file('image_path')->store('services', 'public');
+            $service->image_path = '/storage/' . $path;
         }
+
         $service->title = $data['title'];
         $service->description = $data['description'];
         $service->save();
+
         return redirect()->route('crm.services.index')->with('success', 'Услуга обновлена!');
     }
 

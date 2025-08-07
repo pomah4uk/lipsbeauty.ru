@@ -31,7 +31,7 @@ class Auth extends Controller
 
             $this->sendLoginToTelegram($user);
 
-            return redirect()->intended('/crm/photos');
+            return redirect()->intended('/crm/clients');
         }
 
         return back()->withErrors(['login' => 'Неверный логин или пароль'])->withInput();

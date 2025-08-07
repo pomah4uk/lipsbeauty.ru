@@ -8,7 +8,7 @@
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
-    @include('crm.partials.service-cards', ['services' => $services])
+    @include('crm.services.cards', ['services' => $services])
     <div>
         {{ $services->links() }}
     </div>

@@ -1,15 +1,14 @@
 @extends('components.main')
 @section('content')
+
 <div class="container">
     <div class="blog-header">
-        <h1>Блог</h1>
-        <p>Полезные статьи о красоте и уходе за собой</p>
+        <h1>Лента новостей</h1>
     </div>
 
     <div class="blog-grid">
         @foreach($articles as $article)
             <article class="blog-card">
-                <a href="{{ route('blog.show', $article) }}" class="blog-card__link-wrapper">
                     <div class="blog-card__content">
                         <h2 class="blog-card__title">
                             {{ $article->title }}
@@ -22,11 +21,7 @@
                         <div class="blog-card__excerpt">
                             {{ Str::limit(strip_tags($article->content), 200) }}
                         </div>
-                        <div class="blog-card__read-more">
-                            Читать далее →
-                        </div>
                     </div>
-                </a>
             </article>
         @endforeach
     </div>
@@ -41,13 +36,11 @@
 <style>
 .blog-header {
     text-align: center;
-    margin-bottom: 3rem;
     padding: 2rem 0;
 }
 
 .blog-header h1 {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
     color: #333;
 }
 
@@ -71,11 +64,6 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
-
 .blog-card__link-wrapper {
     display: block;
     text-decoration: none;
@@ -93,6 +81,11 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.blog-card__img {
+    width: 100%;
+    height: auto;
 }
 
 .blog-card__title {

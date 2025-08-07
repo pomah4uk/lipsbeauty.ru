@@ -2,9 +2,6 @@
     <div class="modal-dialog">
         <button class="modal-close" aria-label="Закрыть">&times;</button>
         <h2 class="modal-title">Записаться на консультацию</h2>
-        @if(session('success'))
-            <div class="global-success">{{ session('success') }}</div>
-        @endif
         <form class="contact-form" action="{{ route('client.store') }}" method="post">
             @csrf
             <div class="input-group">

@@ -11,7 +11,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::orderByDesc('created_at')->paginate(20);
-        return view('crm.services.services', compact('services'));
+        return view('crm.services.index', compact('services'));
     }
 
     // Форма создания услуги (CRM)

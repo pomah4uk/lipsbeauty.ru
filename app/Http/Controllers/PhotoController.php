@@ -15,7 +15,7 @@ class PhotoController extends Controller
     public function index()
     {
         $photos = Photo::orderByDesc('created_at')->paginate(20);
-        return view('crm.photos.photos', compact('photos'));
+        return view('crm.photos.index', compact('photos'));
     }
 
     /**

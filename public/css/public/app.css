@@ -190,6 +190,7 @@ body {
 /* Десктопное меню */
 .nav__menu {
     display: flex;
+    align-items: center;
     gap: 24px;
     list-style: none;
     margin: 0;
@@ -197,6 +198,9 @@ body {
 }
 
 .nav__link {
+    display: flex;
+    align-items: center;
+    text-align: center;
     color: #c2185b;
     font-weight: 500;
     font-size: 1.08em;
@@ -291,7 +295,7 @@ body {
 }
 
 /* Мобильная адаптация */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .nav__burger {
         display: flex;
     }
@@ -384,6 +388,7 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 18px;
+        text-align: center;
     }
     .footer__menu {
         flex-direction: row;

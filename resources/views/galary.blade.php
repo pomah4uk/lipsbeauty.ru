@@ -1,4 +1,5 @@
 @extends('components.main')
+@section('title', 'Галерея работ')
 @section('content')
 
 <h2 class="galary__title">Галерея</h2>

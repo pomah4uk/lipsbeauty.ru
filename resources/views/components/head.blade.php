@@ -17,18 +17,14 @@
     <meta property="og:image" content="{{ asset('img/lips_info.jpg') }}" />
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
 
     <!-- Main Stylesheets -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/crm.css">
-    <link rel="stylesheet" href="/css/admin.css">
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/public/main.css">
     
     <!-- JavaScript -->
     <script src="/js/nav.js" defer></script>

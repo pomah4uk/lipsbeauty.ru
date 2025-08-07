@@ -1,6 +1,8 @@
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+<svg width="80" height="50" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
     <!-- Верхняя губа: выраженный изгиб вверх -->
     <path d="M8 28 Q24 0 40 20 Q56 0 72 28" fill="none" stroke="#c2185b" stroke-width="4" stroke-linecap="round"/>
     <!-- Нижняя губа: более выраженный изгиб вниз -->
     <path d="M8 28 Q40 54 72 28" fill="none" stroke="#a3154b" stroke-width="4" stroke-linecap="round"/>
+  </g>
 </svg> 

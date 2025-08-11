@@ -12,7 +12,14 @@ class Post extends Model
     protected $fillable = [
         'title',
         'content',
-        'img_path'
+        'excerpt',
+        'img_path',
+        'is_published',
+        'published_at'
+    ];
+
+    protected $casts = [
+        'created_at' => 'datetime',
     ];
 
     protected static function boot()

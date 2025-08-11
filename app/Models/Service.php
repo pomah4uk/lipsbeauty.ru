@@ -12,7 +12,9 @@ class Service extends Model
     protected $fillable = [
         'title',
         'description',
+        'price',
         'image',
+        'is_active',
     ];
 
     protected static function boot()

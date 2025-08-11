@@ -23,7 +23,7 @@
     <div class="service__cards">
         @foreach($services as $service)
             <div class="service__card">
-            <img src="{{ $service->image_path }}" alt="{{ $service->title }}" class="service__img">
+            <img src="{{ $service->image }}" alt="{{ $service->title }}" class="service__img">
                 <h3 class="service__title">{{ $service->title }}</h3>
                 <p class="service__desc">{{ $service->description }}</p>
             </div>

@@ -3,46 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Админка</title>
-    <link rel="stylesheet" href="{{ asset('css/crm/main-admin.css') }}">
+    <title>CRM - Панель администратора</title>
+    <link rel="stylesheet" href="{{ asset('css/crm/crm.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/public/font-awesome.min.css') }}">
 </head>
 <body>
-    <div class="admin__sidebar" id="crm-sidebar">
-        <a href="{{ route('home') }}" class="admin__sidebar-link{{ request()->is('home') ? ' admin__sidebar-link--active' : '' }}">Главная</a>
-        <a href="{{ route('crm.clients') }}" class="admin__sidebar-link{{ request()->is('crm/clients') ? ' admin__sidebar-link--active' : '' }}">Клиенты</a>
-        <a href="{{ route('crm.posts.index') }}" class="admin__sidebar-link{{ request()->is('crm/posts*') ? ' admin__sidebar-link--active' : '' }}">Посты</a>
-        <a href="{{ route('crm.photos.index') }}" class="admin__sidebar-link{{ request()->is('crm/photos*') ? ' admin__sidebar-link--active' : '' }}">Галерея</a>
-        <a href="{{ route('crm.services.index') }}" class="admin__sidebar-link{{ request()->is('crm/services*') ? ' admin__sidebar-link--active' : '' }}">Услуги</a>
-        <form action="{{ route('crm.logout') }}" method="POST" style="display:block;">
-            @csrf
-            <button type="submit" class="admin__sidebar-link logout-btn">Выйти</button>
-        </form>
+    <div class="crm">
+        <!-- Боковое меню -->
+        <aside class="crm__sidebar" id="crm-sidebar">
+            <div class="crm__sidebar-header">
+                <h1 class="crm__sidebar-title">CRM</h1>
+                <button class="crm__sidebar-close" id="crm-sidebar-close" aria-label="Закрыть меню">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            
+            <nav class="crm__nav">
+                <ul class="crm__nav-list">
+                    <li class="crm__nav-item">
+                        <a href="{{ route('home') }}" class="crm__nav-link{{ request()->is('home') ? ' crm__nav-link--active' : '' }}">
+                            <i class="fa fa-home"></i>
+                            <span>Главная</span>
+                        </a>
+                    </li>
+                    <li class="crm__nav-item">
+                        <a href="{{ route('crm.clients') }}" class="crm__nav-link{{ request()->is('crm/clients') ? ' crm__nav-link--active' : '' }}">
+                            <i class="fa fa-users"></i>
+                            <span>Клиенты</span>
+                        </a>
+                    </li>
+                    <li class="crm__nav-item">
+                        <a href="{{ route('crm.posts.index') }}" class="crm__nav-link{{ request()->is('crm/posts*') ? ' crm__nav-link--active' : '' }}">
+                            <i class="fa fa-newspaper-o"></i>
+                            <span>Посты</span>
+                        </a>
+                    </li>
+                    <li class="crm__nav-item">
+                        <a href="{{ route('crm.photos.index') }}" class="crm__nav-link{{ request()->is('crm/photos*') ? ' crm__nav-link--active' : '' }}">
+                            <i class="fa fa-image"></i>
+                            <span>Галерея</span>
+                        </a>
+                    </li>
+                    <li class="crm__nav-item">
+                        <a href="{{ route('crm.services.index') }}" class="crm__nav-link{{ request()->is('crm/services*') ? ' crm__nav-link--active' : '' }}">
+                            <i class="fa fa-cogs"></i>
+                            <span>Услуги</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="crm__sidebar-footer">
+                <form action="{{ route('crm.logout') }}" method="POST" class="crm__logout-form">
+                    @csrf
+                    <button type="submit" class="crm__logout-btn">
+                        <i class="fa fa-sign-out"></i>
+                        <span>Выйти</span>
+                    </button>
+                </form>
+            </div>
+        </aside>
+
+        <!-- Основной контент -->
+        <main class="crm__main">
+            <!-- Шапка -->
+            <header class="crm__header">
+                <div class="crm__header-content">
+                    <button class="crm__burger" id="crm-burger" type="button" aria-label="Открыть меню">
+                        <span class="crm__burger-line"></span>
+                        <span class="crm__burger-line"></span>
+                        <span class="crm__burger-line"></span>
+                    </button>
+                    
+                    <div class="crm__header-title">
+                        <h2>@yield('page-title', 'Панель администратора')</h2>
+                    </div>
+                    
+                    <div class="crm__header-actions">
+                        @yield('header-actions')
+                    </div>
+                </div>
+            </header>
+
+            <!-- Контент страницы -->
+            <div class="crm__content">
+                @yield('content')
+            </div>
+        </main>
     </div>
-    <div class="admin__header">
-        <button class="crm-burger" id="crm-burger" type="button" aria-label="Открыть меню">
-            <span class="crm-burger-line"></span>
-            <span class="crm-burger-line"></span>
-            <span class="crm-burger-line"></span>
-        </button>
-        Панель администратора
-    </div>
-    <div class="crm-mobile-menu" id="crm-mobile-menu">
-        <div class="crm-mobile-menu-content">
-            <a href="{{ route('home') }}" class="crm-mobile-link{{ request()->is('home') ? ' crm-mobile-link--active' : '' }}">Главная</a>
-            <a href="{{ route('crm.clients') }}" class="crm-mobile-link{{ request()->is('crm/clients') ? ' crm-mobile-link--active' : '' }}">Клиенты</a>
-            <a href="{{ route('crm.posts.index') }}" class="crm-mobile-link{{ request()->is('crm/posts') ? ' crm-mobile-link--active' : '' }}">Посты</a>
-            <a href="{{ route('crm.photos.index') }}" class="crm-mobile-link{{ request()->is('crm/photos*') ? ' crm-mobile-link--active' : '' }}">Галерея</a>
-            <a href="{{ route('crm.services.index') }}" class="crm-mobile-link{{ request()->is('crm/services*') ? ' crm-mobile-link--active' : '' }}">Услуги</a>
-            <form action="{{ route('crm.logout') }}" method="POST" style="display:block;">
-                @csrf
-                <button type="submit" class="crm-mobile-link logout-btn">Выйти</button>
-            </form>
-        </div>
-    </div>
-    <div class="admin__content">
-        @yield('content')
-    </div>
+
     @stack('scripts')
-    <script src="/js/crm-nav.js"></script>
+    <script src="{{ asset('js/crm-nav.js') }}"></script>
 </body>
 </html> 

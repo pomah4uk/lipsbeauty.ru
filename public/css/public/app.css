@@ -89,7 +89,7 @@
     opacity: 0.8;
 }
 .contact-form input[type="text"],
-.contact-form input[type="phone"],
+.contact-form input[type="tel"],
 .contact-form input[type="date"] {
     border: none;
     background: transparent;

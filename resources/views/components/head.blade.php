@@ -24,9 +24,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
 
     <!-- Main Stylesheets -->
-    <link rel="stylesheet" href="/css/public/main.css">
-    
-    <!-- JavaScript -->
-    <script src="/js/nav.js" defer></script>
+    @vite(['resources/css/app.css'])
 </head>
 <body>

@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM - Панель администратора</title>
-    <link rel="stylesheet" href="{{ asset('css/crm/crm.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/public/font-awesome.min.css') }}">
+    @vite([
+    'resources/css/crm/crm.css',
+    'resources/css/public/font-awesome.min.css',
+    'resources/js/app.js'
+    ])
 </head>
 <body>
     <div class="crm">
@@ -93,6 +96,5 @@
     </div>
 
     @stack('scripts')
-    <script src="{{ asset('js/crm-nav.js') }}"></script>
 </body>
 </html> 

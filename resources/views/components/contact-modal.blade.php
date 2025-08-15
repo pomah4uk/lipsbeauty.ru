@@ -19,6 +19,5 @@
             </div>
             <button class="modal__btn" type="submit">Записаться <img src="{{ asset('img/icons/double-arrow.png') }}" alt="#" style="margin-left:8px; height:18px; vertical-align:middle;"/></button>
         </form>
-        <script src="/js/modal-phone.js"></script>
     </div>
 </div> 

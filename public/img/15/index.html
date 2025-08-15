@@ -1,0 +1,49 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+    <form id="film-form">
+        <label for="title">Название:</label><br>
+        <input type="text" id="title" name="title"><br>
+        <p class="warning warning-title">Заполните название</p>
+        <label for="genre">Жанр:</label><br>
+        <input type="text" id="genre" name="genre"><br>
+        <p class="warning warning-genre">Заполните жанр</p>
+        <label for="releaseYear">Год:</label><br>
+        <input type="text" id="releaseYear" name="releaseYear"><br>
+        <p class="warning warning-year">Введите год</p>
+        <input type="checkbox" id="isWatched" name="isWatched">
+        <label for="isWatched">Успели посмотреть?</label><br>
+        <input type="submit" value="Submit">
+    </form>
+    <div class="search-form">
+            <input type="text" name="search-title" id="search-title" placeholder="Название" required>
+            <input type="text" name="search-genre" id="search-genre" placeholder="Жанр" disabled required>
+            <input type="text" name="search-year" id="search-year" placeholder="Год" disabled required>
+            <select name="search" id="search">
+                <option value="title">Название</option>
+                <option value="genre">Жанр</option>
+                <option value="releaseYear">Год</option>
+            </select>
+        <button class="btn btnDelAll" type="button">Удалить всё</button>
+    </div>
+    <table id="film-table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Жанр</th>
+                <th>Год</th>
+                <th>Успели посмотреть?</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <tbody id="film-tbody">
+            <!-- Rows will be inserted here -->
+        </tbody>
+    </table>
+    <script src="./script.js"></script>
+    <script src="./search.js"></script>
+    <script src="./validation.js"></script>
+</body>
+</html>

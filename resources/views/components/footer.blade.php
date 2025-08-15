@@ -25,8 +25,7 @@
 </footer>
 <!-- Footer section end -->
 
-<!--====== Javascripts ======-->
-<script src="/js/modal.js"></script>
+@vite(['resources/js/app.js'])
 
 @stack('scripts')
 

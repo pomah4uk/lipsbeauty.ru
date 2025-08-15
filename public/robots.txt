@@ -1,2 +1,9 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Запрещаем доступ к CRM и админке
+Disallow: /crm/
+Disallow: /admin/
+
+# Указываем расположение sitemap
+Sitemap: https://big-lips.qq/sitemap.xml

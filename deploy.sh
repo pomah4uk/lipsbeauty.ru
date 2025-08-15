@@ -15,9 +15,6 @@ echo "🎨 Установка и сборка ассетов..."
 npm install
 npm run build
 
-echo "🔑 Генерация ключа приложения..."
-php artisan key:generate
-
 echo "🗄️ Запуск миграций..."
 php artisan migrate --force
 
